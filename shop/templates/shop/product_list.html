@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<body>
+    <h1>Product List</h1>
+    <ul>
+    {% for product in products %}
+        <li>
+            <b>{{ product.product_name }}</b>,({{ product.category }})
+            <ul>
+                <li><b>Subcategory</b>: {{ product.subcategory }}</li>
+                <li><b>Price</b>: {{ product.price }}</li>
+                <li><b>Description</b>: {{ product.desc }}</li>
+                <li><b>Published Date</b>: {{ product.pub_date }}</li>
+                <li><b>Image</b>: {{ product.Image }}</li>
+            </ul>
+        </li>
+    {% empty %}
+        <li>No products available.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
